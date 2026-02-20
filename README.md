@@ -27,6 +27,13 @@ A análise revelou que nem sempre a quantidade de paradas dita a demora de uma l
 * Complexidade Média: 15,38 paradas por linha.
 * Correlação (Paradas vs Tempo): 0.51 (Indica que o número de paradas explica apenas 50% da demora; os outros 50% são tráfego e distância).
 
+## 📊 Dashboards e Visualização
+Abaixo, a comparação entre a densidade de paradas e o tempo de deslocamento:
+
+![Ranking de Tempo e Paradas](Projeto_SPTrans/Relatorios/Dashboard.png)
+
+*O gráfico acima demonstra que a linha **Amador Bueno - Julio Prestes** lidera tanto em paradas quanto em tempo total de viagem (147 min).*
+
 ## 🏁Conclusão
 Este projeto foi desenvolvido para demonstrar minha capacidade de transformar dados brutos de transporte (GTFS) em insights estratégicos de mobilidade. Através do tratamento de dados com Python, consegui ir além da simples contagem de paradas e isolei gargalos temporais que impactam diretamente a jornada do usuário. A análise me permitiu concluir que, embora a linha Amador Bueno - Julio Prestes possua a maior complexidade operacional, a eficiência do sistema é multifatorial, dependendo da relação entre densidade de paradas e velocidade média do trajeto.
 
