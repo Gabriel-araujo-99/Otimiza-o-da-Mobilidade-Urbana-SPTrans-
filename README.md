@@ -68,9 +68,6 @@ A visualização geográfica foi desenvolvida no Looker Studio, utilizando os da
 ---
 ## 📩 Contato
 
----
-## 📩 Contato
-
 Gostou do projeto ou tem alguma dúvida? Entre em contato comigo:
 
 * **LinkedIn:** [Gabriel Araujo](https://www.linkedin.com/in/gabriel-araujo-a99a833a4/)
