@@ -1,74 +1,38 @@
-# Otimização da Mobilidade Urbana - SPTrans (Projeto Semantix)
-Este projeto visa analisar os dados de transporte público da cidade de São Paulo (SPTrans) para identificar gargalos operacionais e propor melhorias na mobilidade urbana utilizando técnicas de Big Data e Engenharia de Dados.
+### 🚌Otimização da Mobilidade Urbana - SPTrans
+Este projeto realiza uma análise exploratória de dados (EDA) sobre o sistema de transporte público de São Paulo, utilizando os dados oficiais da SPTrans (formato GTFS). O objetivo é identificar as linhas mais complexas em termos de paradas e o impacto disso no tempo total de viagem.
 
-## 1. Dissertação sobre o Problema: Variabilidade do Tempo de Viagem
-### Descrição do Problema
-O sistema de transporte de São Paulo enfrenta grandes desafios com a discrepância entre o horário planejado e o executado. Fatores como congestionamentos e alta densidade de paradas em determinadas linhas geram atrasos sistêmicos. O objetivo deste projeto é identificar as linhas críticas através da análise de dados de telemetria e itinerários.
+## 📊Principais Insights do Dashboard
+A análise revelou que nem sempre a quantidade de paradas dita a demora de uma linha:
 
-### Relevância
-Resolver o problema da variabilidade do tempo de viagem impacta diretamente na produtividade da cidade e na qualidade de vida de milhões de usuários. Para empresas como a Semantix, este projeto demonstra a capacidade de transformar dados brutos de cidades inteligentes em inteligência de negócio.
+* Ranking de Paradas: A linha AMADOR BUENO - JULIO PRESTES lidera em complexidade operacional com aproximadamente 44 paradas por viagem.
+* Ranking de Tempo: A mesma linha (AMADOR BUENO - JULIO PRESTES) gasta cerca de 147 minutos para completar o trajeto, sendo a mais demorada da amostra.
+* Eficiência: Linhas como JUNDIAI - LUZ mostram um tempo elevado (~136 min) apesar de possuírem menos paradas que as linhas de metrô, evidenciando grandes distâncias entre estações.
 
-## 2. Levantamento das Fontes de Dados
-Para este projeto, utilizamos o padrão internacional GTFS (General Transit Feed Specification) fornecido pela SPTrans.
-### API Olho Vivo (HTTPS)
-Tipo de dados : Semiestruturado (JSON)
+## 🛠️Tecnologias Utilizadas
 
-Método de coleta : Coleta de telemetria em tempo real.
+* Python: Processamento e limpeza de dados com a biblioteca pandas.
+* Google Looker Studio: Visualização de dados e criação de dashboards interativos.
+* Dados GTFS: Arquivos oficiais da SPTrans (Agosto/2025).
 
-### Arquivos GTFS
-Tipo de dados : Estruturado (CSV/.txt)
+## 📂Estrutura do Repositório
 
-Método de coleta: Dados estáticos de rotas, paradas e horários.
+* analise_sptrans.py: Script Python que calcula a densidade de paradas e converte horários de chegada/partida em minutos totais de viagem.
+* dados_para_looker.csv: Base de dados tratada e exportada pelo Python para alimentar o dashboard.
+* Relatorios/: Contém o arquivo SPTrans.pdf com a visualização final do projeto.
 
-## 3. 3. Análise Exploratória de Dados (EDA) 
-Com a execução do script final, os seguintes marcos foram alcançados:
+## 📈Resultados Estatísticos
 
-### 3.1. Limpeza e Pré-processamento
-* Limpeza de Dados: Foram tratados 9 valores nulos e removidas duplicatas, garantindo a integridade da análise.
+* Linhas Analisadas: 13
+* Viagens Mapeadas: 26
+* Complexidade Média: 15,38 paradas por linha.
+* Correlação (Paradas vs Tempo): 0.51 (Indica que o número de paradas explica apenas 50% da demora; os outros 50% são tráfego e distância).
 
-## 3.2. Análise Descritiva e Padrões
-* Volume Analisado: 1.347 rotas únicas.
+## 🏁Conclusão
+Este projeto foi desenvolvido para demonstrar minha capacidade de transformar dados brutos de transporte (GTFS) em insights estratégicos de mobilidade. Através do tratamento de dados com Python, consegui ir além da simples contagem de paradas e isolei gargalos temporais que impactam diretamente a jornada do usuário. A análise me permitiu concluir que, embora a linha Amador Bueno - Julio Prestes possua a maior complexidade operacional, a eficiência do sistema é multifatorial, dependendo da relação entre densidade de paradas e velocidade média do trajeto.
 
-* Média Operacional: A média do sistema integrado analisado é de 43,65 paradas por itinerário.
+## 📩Contato
+Gostou do projeto? Vamos conectar! Estou em busca de novas oportunidades e desafios na área de dados.
 
-### 3.3. Variáveis e Correlações
-* Análise de Correlação: O resultado nan na correlação matemática automatizada revelou que o route_id não é uma variável puramente numérica, indicando que a nomenclatura das linhas segue uma lógica categórica (regional/modal) e não sequencial.
-
-## 4. Relatório de Insights (Tomada de Decisão)
-Com base no TOP 5 gerado pelo código, extraímos os seguintes insights:
-
-* Eficiência dos Estruturais: As linhas com maior densidade de paradas no dataset processado são o Metrô L1 (23 paradas) e a CPTM L08 (22 paradas).
-
-* Divergência de Dados: Note que, embora essas linhas tenham "muitas paradas" no contexto de trilhos, elas são extremamente eficientes comparadas à média de ônibus (43,65). Isso indica que o sistema sobre trilhos em São Paulo é o pilar de estabilidade do tempo de viagem.
-
-* Decisão Estratégica: Recomendamos focar a integração tarifária e física nos pontos de alta densidade (Tucuruvi, Jabaquara e Luz), pois são os nós críticos onde a maior quantidade de passageiros realiza transferências.
-
-## 5. Visualização de Dados (Dashboard)
-A visualização geográfica foi desenvolvida no Looker Studio, utilizando os dados de latitude e longitude das paradas para mapear a cobertura do sistema.
-
-* Ferramenta: Google Looker Studio.
-
-* Visualização: Mapa de densidade de paradas.
-
-## 🛠️ Tecnologias Utilizadas
-* Linguagem: Python 3.13
-
-* Bibliotecas: Pandas
-
-* IDE: Visual Studio Code (VS Code)
-
-* Visualização: Looker Studio
-  
-## 🏁 Conclusão
-Este projeto demonstrou como a aplicação de técnicas de Data Engineering e EDA (Exploratory Data Analysis) pode transformar arquivos brutos do sistema SPTrans em insights acionáveis para a gestão pública.
-
-Através do processamento de mais de 1.300 rotas, foi possível identificar que o sistema sobre trilhos (Metrô/CPTM) atua como o esqueleto de estabilidade da cidade, enquanto as linhas de superfície (ônibus) enfrentam o desafio da alta densidade de paradas. A capacidade de limpar dados inconsistentes e cruzar diferentes fontes de informação é o que permite a criação de soluções inteligentes para cidades mais conectadas.
-
----
-## 📩 Contato
-
-Gostou do projeto ou tem alguma dúvida? Entre em contato comigo:
-
-* **LinkedIn:** [Gabriel Araujo](https://www.linkedin.com/in/gabriel-araujo-a99a833a4/)
-* **E-mail:** Gabrielaraujobr99@gmail.com
-* **Portfólio GitHub:** [Gabriel-araujo-99](https://github.com/Gabriel-araujo-99)
+* **LinkedIn**: [Gabriel Araujo](https://www.linkedin.com/in/gabriel-araujo-a99a833a4/)
+* **Email**: [gabrielaraujobr99@gmail.com](mailto:gabrielaraujobr99@gmail.com)
+* **GitHub**: [gabrielaraujobr99](https://github.com/gabrielaraujobr99)
