@@ -20,7 +20,7 @@ Tipo de dados : Estruturado (CSV/.txt)
 
 Método de coleta: Dados estáticos de rotas, paradas e horários.
 
-## 3. 3. Análise Exploratória de Dados (EDA) - Resultados Reais
+## 3. 3. Análise Exploratória de Dados (EDA) 
 Com a execução do script final, os seguintes marcos foram alcançados:
 
 ### 3.1. Limpeza e Pré-processamento
@@ -58,6 +58,11 @@ A visualização geográfica foi desenvolvida no Looker Studio, utilizando os da
 * IDE: Visual Studio Code (VS Code)
 
 * Visualização: Looker Studio
+  
+## 🏁 Conclusão
+Este projeto demonstrou como a aplicação de técnicas de Data Engineering e EDA (Exploratory Data Analysis) pode transformar arquivos brutos do sistema SPTrans em insights acionáveis para a gestão pública.
+
+Através do processamento de mais de 1.300 rotas, foi possível identificar que o sistema sobre trilhos (Metrô/CPTM) atua como o esqueleto de estabilidade da cidade, enquanto as linhas de superfície (ônibus) enfrentam o desafio da alta densidade de paradas. A capacidade de limpar dados inconsistentes e cruzar diferentes fontes de informação é o que permite a criação de soluções inteligentes para cidades mais conectadas.
 
 ---
 ## 📩 Contato
