@@ -1,4 +1,4 @@
-### 🚌Otimização da Mobilidade Urbana - SPTrans
+# 🚌Otimização da Mobilidade Urbana - SPTrans
 Este projeto realiza uma análise exploratória de dados (EDA) sobre o sistema de transporte público de São Paulo, utilizando os dados oficiais da SPTrans (formato GTFS). O objetivo é identificar as linhas mais complexas em termos de paradas e o impacto disso no tempo total de viagem.
 
 ## 📊Principais Insights do Dashboard
